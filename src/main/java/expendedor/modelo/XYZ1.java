@@ -1,7 +1,6 @@
 package expendedor.modelo;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import expendedor.accions.items.ActionXYZ1;
 import expendedor.modelo.moneda.CoinValues;
 import expendedor.modelo.moneda.MetodoPago;
@@ -9,6 +8,7 @@ import expendedor.modelo.moneda.Moneda;
 import expendedor.modelo.moneda.Monedero;
 import expendedor.modelo.producto.Item;
 import expendedor.util.ModelMachine;
+import expendedor.util.ObjectMapperWrapper;
 import expendedor.util.RestConnection;
 import expendedor.util.request.ItemDTO;
 import org.apache.commons.lang3.ObjectUtils;
@@ -25,7 +25,7 @@ public class XYZ1 implements Expendedor {
     private ModelMachine modelMachine = ModelMachine.XYZ1;
     private Compra compra;
     private static Logger logger = Logger.getLogger(XYZ1.class.getName());
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapperWrapper objectMapper = new ObjectMapperWrapper();
     private ExpendedorConfig expendedorConfig;
 
     @Override
